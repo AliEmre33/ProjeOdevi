@@ -1,18 +1,18 @@
 package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-public class SingUpPage extends BasePage  {
+public class SignUpPage extends BasePage  {
 
-    // Locators
+
     By nameField = By.xpath("//input[@data-qa='signup-name']");
     By emailField = By.xpath("//input[@data-qa='signup-email']");
     By signUpButton = By.xpath("//button[@data-qa='signup-button']");
 
-    // Formun devamında
+
     By passwordField = By.id("password");
     By signupSubmitButton = By.xpath("//button[@data-qa='create-account']");
 
-    public SingUpPage(WebDriver driver) {
+    public SignUpPage(WebDriver driver) {
         super(driver);
     }
 
@@ -30,7 +30,7 @@ public class SingUpPage extends BasePage  {
 
     public void fillDetailsAndSubmit(String password) {
         driver.findElement(passwordField).sendKeys(password);
-        // Gerekli diğer alanlar doldurulur
+
         driver.findElement(signupSubmitButton).click();
     }
 }
